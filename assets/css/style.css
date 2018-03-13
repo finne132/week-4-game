@@ -31,15 +31,23 @@ ul {
     text-align:left;
 }
 
-#button-ruby{
-
+button#ruby{
+    background-image:url('../images/ruby.png');
+    height:120px;
+    width:100%;
 }
-#button-diamond{
-
+button#diamond{
+    background-image:url('../images/diamond.png');
+    height:120px;
+    width:100%;
 }
-#button-topaz{
-
+button#topaz{
+    background-image:url('../images/topaz.png');
+    height:120px;
+    width:100%;
 }
-#button-emerald{
-
+button#emerald{
+    background-image:url('../images/emerald.png');
+    height:120px;
+    width:100%;
 }
