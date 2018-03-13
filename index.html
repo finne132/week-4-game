@@ -4,7 +4,7 @@
     <!-- metas -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Joe's Crystal</title>
+    <title>Crystal Collector</title>
 
     <link rel="icon" type="image/png" href="favicon.ico">
 
@@ -158,13 +158,13 @@
         reset()
     }
 
-  //sets up click for jewels
-    $('#ruby').on ('click', function(){
+    // onClicks for the 4 gems
+    $('#ruby').on('click', function(){
       userScore = userScore + rubyValue;
       console.log("New user score = " + userScore);
       $('#ruby').text(rubyValue);
       $('#score').text(userScore); 
-            //sets win/lose conditions
+            //ultimate win/lose condition check
           if (userScore == Random){
             win();
           }
@@ -172,7 +172,7 @@
             lose();
           }   
     })  
-    $('#diamond').on ('click', function(){
+    $('#diamond').on('click', function(){
       userScore = userScore + diamondValue;
       console.log("New user score = " + userScore);
       $('#diamond').text(diamondValue);
@@ -184,22 +184,22 @@
             lose();
           } 
     })  
-    $('#topaz').on ('click', function(){
+    $('#topaz').on('click', function(){
       userScore = userScore + topazValue;
       console.log("New userScore= " + userScore);
       $('#topaz').text(topazValue);
       $('#score').text(userScore);
   
 
-      // The ultimate win/lose conditions
-            if (userScore == Random){
-            win();
-          }
-          else if ( userScore > Random){
-            lose();
-          } 
+    // The ultimate win/lose conditions
+        if (userScore == Random){
+        win();
+        }
+        else if ( userScore > Random){
+        lose();
+        } 
     })  
-    $('#emerald').on ('click', function(){
+    $('#emerald').on('click', function(){
       userScore = userScore + emeraldValue;
       console.log("New userScore= " + userScore);
       $('#emerald').text(emeraldValue);
