@@ -54,11 +54,12 @@
         </div>
         <div class="row" style="margin:25px">
             <div class="col-md-3"><!-- Row 3 left spacer --></div>
-            <div class="col-md-3" style="background-color:paleturquoise"><!-- Target number -->
-                <p></p>
+            <div class="col-md-3 text-center" style="background-color:paleturquoise; padding-top:35px"><!-- Target number -->
+                <p id="target">Target Number:</p>
             </div>
-            <div class="col-md-3" style="background-color:palegreen"><!-- Score -->
-                <p></p>
+            <div class="col-md-3 text-center" style="background-color:palegreen"><!-- Wins and Losses -->
+                <p id="wins" style="margin-top:15px">Wins:</p>
+                <p id="losses">Losses:</p>
             </div>
             <div class="col-md-3"><!-- Row 3 right spacer --></div>
         </div>
@@ -68,7 +69,7 @@
                 <button id ="ruby"></button>
             </div>
             <div class="col-md-2"><!-- Button 2 -->
-                <button id ="diamond"><span id="ruby"</button>
+                <button id ="diamond"></button>
             </div>
             <div class="col-md-2"><!-- Button 3 -->
                 <button id ="topaz"></button>
@@ -78,9 +79,18 @@
             </div>
             <div class="col-md-2"><!--Row 4 right spacer --></div>
         </div>
+        <div class="row">
+            <div class="col-md-3"><!--Row 5 left spacer --></div>
+            <div class="col-md-6 text-center" style="background-color:mediumturquoise; padding-top:15px">
+                <h1>Your Current Score:</h1>
+                <hr>
+                <p id ="score">0</p>
+            </div>
+            <div class="col-md-3"><!--Row 5 right spacer --></div>
+        </div>
     </div>
 </main>
-<footer style = "text-align:center; font-size:12px">
+<footer style = "text-align:center; font-size:12px; margin-top:25px">
     Made by Joe Finnegan (github.com/finne132) - Code Bootcamp Assignment #4
 </footer>>
 

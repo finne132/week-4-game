@@ -31,23 +31,25 @@ ul {
     text-align:left;
 }
 
-button#ruby{
-    background-image:url('../images/ruby.png');
+button{
     height:120px;
-    width:100%;
+    width:120px;
+    background-repeat:no-repeat;
+}
+
+button#ruby{
+    background-image:url('../images/ruby.png')
 }
 button#diamond{
-    background-image:url('../images/diamond.png');
-    height:120px;
-    width:100%;
+    background-image:url('../images/diamond.png')
 }
 button#topaz{
-    background-image:url('../images/topaz.png');
-    height:120px;
-    width:100%;
+    background-image:url('../images/topaz.png')
 }
 button#emerald{
-    background-image:url('../images/emerald.png');
-    height:120px;
-    width:100%;
+    background-image:url('../images/emerald.png')
+}
+
+p#score{
+    font-size:75px;
 }
