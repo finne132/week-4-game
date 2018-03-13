@@ -128,7 +128,7 @@
     function reset(){
             Random=Math.floor(Math.random()*101+19);
             console.log(`The computer has chosen ${Random} as the new target number`);
-            $('#target').text(Random);
+            $('#target').text(`Target Number: ${Random}`);
             rubyValue= Math.floor(Math.random()*11+1);
             diamondValue= Math.floor(Math.random()*11+1);
             topazValue= Math.floor(Math.random()*11+1);
@@ -146,7 +146,7 @@
     function win(){
     alert("You won!");
         wins++; 
-        $('#wins').text(wins);
+        $('#wins').text(`Wins: ${wins}`);
         reset();
     }
 
@@ -154,7 +154,7 @@
     function lose(){
     alert ("You lost the game! Better luck next time!");
         losses++;
-        $('#losses').text(losses);
+        $('#losses').text(`Losses: ${losses}`);
         reset()
     }
 
@@ -189,7 +189,9 @@
       console.log("New userScore= " + userScore);
       $('#topaz').text(topazValue);
       $('#score').text(userScore);
-  //sets win/lose conditions
+  
+
+      // The ultimate win/lose conditions
             if (userScore == Random){
             win();
           }
