@@ -95,12 +95,13 @@
 
 <script>
     $( document ).ready(function(){
+
     // picks a random number between 19 - 120
     var Random=Math.floor(Math.random()*101+19)
     console.log(`The computer has chosen ${Random} as the new target number`);
 
     // Update target number in the DOM with the new random number
-    $('#target').text(Random);
+    $('#target').text(`Target Number: ${Random}`);
 
     // pick a random value for each gem between 1-12
     var rubyValue= Math.floor(Math.random()*11+1)
@@ -117,6 +118,12 @@
     $('#wins').text(`Wins: ${wins}`);
     $('#losses').text(`Losses: ${losses}`);
 
+    // make sure all buttons display a question mark for their value in the DOM
+    $('#ruby').text("?");
+    $('#diamond').text("?");
+    $('#topaz').text("?");
+    $('#emerald').text("?");
+
     // function to reset the game (choose new target, assign new gem values, clear score variables)
     function reset(){
             Random=Math.floor(Math.random()*101+19);
@@ -128,6 +135,11 @@
             emeraldValue= Math.floor(Math.random()*11+1);
             userScore= 0;
             $('#score').text(userScore);
+            // reset the button text values to question marks
+            $('#ruby').text("?");
+            $('#diamond').text("?");
+            $('#topaz').text("?");
+            $('#emerald').text("?");
             }
 
     // function that controls what happens when a user wins
@@ -150,6 +162,7 @@
     $('#ruby').on ('click', function(){
       userScore = userScore + rubyValue;
       console.log("New user score = " + userScore);
+      $('#ruby').text(rubyValue);
       $('#score').text(userScore); 
             //sets win/lose conditions
           if (userScore == Random){
@@ -162,6 +175,7 @@
     $('#diamond').on ('click', function(){
       userScore = userScore + diamondValue;
       console.log("New user score = " + userScore);
+      $('#diamond').text(diamondValue);
       $('#score').text(userScore); 
           if (userScore == Random){
             win();
@@ -173,6 +187,7 @@
     $('#topaz').on ('click', function(){
       userScore = userScore + topazValue;
       console.log("New userScore= " + userScore);
+      $('#topaz').text(topazValue);
       $('#score').text(userScore);
   //sets win/lose conditions
             if (userScore == Random){
@@ -185,6 +200,7 @@
     $('#emerald').on ('click', function(){
       userScore = userScore + emeraldValue;
       console.log("New userScore= " + userScore);
+      $('#emerald').text(emeraldValue);
       $('#score').text(userScore); 
         
             if (userScore == Random){
