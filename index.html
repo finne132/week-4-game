@@ -103,28 +103,28 @@
     // Update target number in the DOM with the new random number
     $('#target').text(`Target Number: ${Random}`);
 
-    // pick a random value for each gem between 1-12
-    var rubyValue= Math.floor(Math.random()*11+1)
-    var diamondValue= Math.floor(Math.random()*11+1)
-    var topazValue= Math.floor(Math.random()*11+1)
-    var emeraldValue= Math.floor(Math.random()*11+1)
-
     // declare the variables for keeping score
     let userScore= 0; 
     let wins= 0;
     let losses = 0;
+
+    // assign a random value for each gem type, number between 1-12
+    var rubyValue= Math.floor(Math.random()*11+1)
+    var diamondValue= Math.floor(Math.random()*11+1)
+    var topazValue= Math.floor(Math.random()*11+1)
+    var emeraldValue= Math.floor(Math.random()*11+1)
     
-    // Update wins and losses in the DOM
+    // initialize wins and losses in the DOM
     $('#wins').text(`Wins: ${wins}`);
     $('#losses').text(`Losses: ${losses}`);
 
-    // make sure all buttons display a question mark for their value in the DOM
+    // initialize buttons - make sure all display a question mark for their value in the DOM
     $('#ruby').text("?");
     $('#diamond').text("?");
     $('#topaz').text("?");
     $('#emerald').text("?");
 
-    // function to reset the game (choose new target, assign new gem values, clear score variables)
+    // function used to reset the game (choose new target, assign new gem values, clear score variables)
     function reset(){
             Random=Math.floor(Math.random()*101+19);
             console.log(`The computer has chosen ${Random} as the new target number`);
@@ -142,7 +142,7 @@
             $('#emerald').text("?");
             }
 
-    // function that controls what happens when a user wins
+    // puppet master function that controls what happens when a user wins
     function win(){
     alert("You won!");
         wins++; 
@@ -150,7 +150,7 @@
         reset();
     }
 
-    // function that controls what happens when a user does not win
+    // puppet master function that controls what happens when a user does not win
     function lose(){
     alert ("You lost the game! Better luck next time!");
         losses++;
@@ -158,13 +158,14 @@
         reset()
     }
 
-    // onClicks for the 4 gems
+    // jQuery onClicks for the 4 gems: value operations and win conditions
     $('#ruby').on('click', function(){
       userScore = userScore + rubyValue;
       console.log("New user score = " + userScore);
       $('#ruby').text(rubyValue);
       $('#score').text(userScore); 
-            //ultimate win/lose condition check
+    // The ultimate win/lose condition check - every button press
+    // checks to see if the user has won or lost
           if (userScore == Random){
             win();
           }
@@ -176,7 +177,9 @@
       userScore = userScore + diamondValue;
       console.log("New user score = " + userScore);
       $('#diamond').text(diamondValue);
-      $('#score').text(userScore); 
+      $('#score').text(userScore);
+    // The ultimate win/lose condition check - every button press
+    // checks to see if the user has won or lost 
           if (userScore == Random){
             win();
           }
@@ -191,7 +194,8 @@
       $('#score').text(userScore);
   
 
-    // The ultimate win/lose conditions
+    // The ultimate win/lose condition check - every button press
+    // checks to see if the user has won or lost
         if (userScore == Random){
         win();
         }
@@ -204,7 +208,8 @@
       console.log("New userScore= " + userScore);
       $('#emerald').text(emeraldValue);
       $('#score').text(userScore); 
-        
+    // The ultimate win/lose condition check - every button press
+    // checks to see if the user has won or lost  
             if (userScore == Random){
             win();
           }
