@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Bootstrap CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> 
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     </head>
 
 <body>
@@ -90,14 +92,117 @@
         </div>
     </div>
 </main>
+
+<script>
+    $( document ).ready(function(){
+    // picks a random number between 19 - 120
+    var Random=Math.floor(Math.random()*101+19)
+    console.log(`The computer has chosen ${Random} as the new target number`);
+
+    // Update target number in the DOM with the new random number
+    $('#target').text(Random);
+
+    // pick a random value for each gem between 1-12
+    var rubyValue= Math.floor(Math.random()*11+1)
+    var diamondValue= Math.floor(Math.random()*11+1)
+    var topazValue= Math.floor(Math.random()*11+1)
+    var emeraldValue= Math.floor(Math.random()*11+1)
+
+    // declare the variables for keeping score
+    let userScore= 0; 
+    let wins= 0;
+    let losses = 0;
+    
+    // Update wins and losses in the DOM
+    $('#wins').text(`Wins: ${wins}`);
+    $('#losses').text(`Losses: ${losses}`);
+
+    // function to reset the game (choose new target, assign new gem values, clear score variables)
+    function reset(){
+            Random=Math.floor(Math.random()*101+19);
+            console.log(`The computer has chosen ${Random} as the new target number`);
+            $('#target').text(Random);
+            rubyValue= Math.floor(Math.random()*11+1);
+            diamondValue= Math.floor(Math.random()*11+1);
+            topazValue= Math.floor(Math.random()*11+1);
+            emeraldValue= Math.floor(Math.random()*11+1);
+            userScore= 0;
+            $('#score').text(userScore);
+            }
+
+    // function that controls what happens when a user wins
+    function win(){
+    alert("You won!");
+        wins++; 
+        $('#wins').text(wins);
+        reset();
+    }
+
+    // function that controls what happens when a user does not win
+    function lose(){
+    alert ("You lost the game! Better luck next time!");
+        losses++;
+        $('#losses').text(losses);
+        reset()
+    }
+
+  //sets up click for jewels
+    $('#ruby').on ('click', function(){
+      userScore = userScore + rubyValue;
+      console.log("New user score = " + userScore);
+      $('#score').text(userScore); 
+            //sets win/lose conditions
+          if (userScore == Random){
+            win();
+          }
+          else if ( userScore > Random){
+            lose();
+          }   
+    })  
+    $('#diamond').on ('click', function(){
+      userScore = userScore + diamondValue;
+      console.log("New user score = " + userScore);
+      $('#score').text(userScore); 
+          if (userScore == Random){
+            win();
+          }
+          else if ( userScore > Random){
+            lose();
+          } 
+    })  
+    $('#topaz').on ('click', function(){
+      userScore = userScore + topazValue;
+      console.log("New userScore= " + userScore);
+      $('#score').text(userScore);
+  //sets win/lose conditions
+            if (userScore == Random){
+            win();
+          }
+          else if ( userScore > Random){
+            lose();
+          } 
+    })  
+    $('#emerald').on ('click', function(){
+      userScore = userScore + emeraldValue;
+      console.log("New userScore= " + userScore);
+      $('#score').text(userScore); 
+        
+            if (userScore == Random){
+            win();
+          }
+          else if ( userScore > Random){
+            lose();
+          }
+    });   
+  }); 
+</script>
 <footer style = "text-align:center; font-size:12px; margin-top:25px">
     Made by Joe Finnegan (github.com/finne132) - Code Bootcamp Assignment #4
 </footer>>
-
     <!-- Script CDNs -->
         <!-- Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    </body>
 </html>
